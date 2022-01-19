@@ -11,12 +11,16 @@ const SearchRepositoriesList: FC = () => {
         e.preventDefault();
 
         searchRepositories(term); // sumbit시에 특정 action을 dispatch한다.
-    }
+    };
+
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setTerm(e.target.value);
+    };
 
     return (
         <>
             <form onSubmit={onSubmit}>
-                <input value={term} onChange{(e) => setTerm(e.target.value)} />
+                <input value={term} onChange={onChange} />
                 <button>Search</button>
             </form>
             <ul>{!loading && data.map((name) => <li key={name}>{name}</li>)}</ul>

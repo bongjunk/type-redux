@@ -3,7 +3,7 @@ import { ActionType } from '../action-types';
 import { Dispatch } from 'redux';
 import { Action } from '../actions';
 
-export default searchRepositories = (term: string) => {
+export const searchRepositories = (term: string) => {
     return async (dispatch: Dispatch<Action>) => {
         // 검색시 (onSubmit에서 처리) 액션
         dispatch({
